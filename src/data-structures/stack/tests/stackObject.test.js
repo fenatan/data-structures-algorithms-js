@@ -1,7 +1,7 @@
 const assert = require('assert');
-const Stack = require('../stackArray');
+const Stack = require('../stackObject');
 
-describe('Stack tests', function(){
+describe('Stack tests', function () {
     it('Should create a stack', () => {
         const stack = new Stack();
         assert.notEqual(stack, null);
@@ -9,10 +9,12 @@ describe('Stack tests', function(){
 
     it('Should add elements to stack', () => {
         const stack = new Stack();
+
         stack.push(1);
         stack.push(2);
         stack.push('c');
-        assert.notDeepEqual(stack._stack, []);
+
+        assert.notDeepEqual(stack._stack, {});
     });
 
     it('Should check size of stack', () => {
@@ -21,7 +23,7 @@ describe('Stack tests', function(){
 
         stack.push(1);
         stack.push(2);
-        
+
         assert.deepEqual(stack.size(), 2);
     });
 
@@ -31,7 +33,7 @@ describe('Stack tests', function(){
 
         stack.push(1);
         stack.push(2);
-        
+
         assert.deepEqual(stack.isEmpty(), false);
     });
 
@@ -41,7 +43,7 @@ describe('Stack tests', function(){
 
         stack.push(1);
         stack.push(2);
-        
+
         assert.deepEqual(stack.top(), 2);
     });
 
@@ -53,7 +55,7 @@ describe('Stack tests', function(){
         stack.push(2);
 
         stack.pop();
-        
+
         assert.deepEqual(stack.top(), 1);
     });
 
@@ -65,7 +67,7 @@ describe('Stack tests', function(){
 
         stack.clear();
 
-        assert.deepEqual(stack._stack, []);
-        assert.deepEqual(stack.size(), 0);
+        assert.deepEqual(stack._stack, {});
+        assert.deepEqual(stack._count, 0);
     });
 });
