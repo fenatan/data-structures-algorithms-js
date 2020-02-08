@@ -27,12 +27,12 @@ describe('Stack tests', function(){
 
     it('Should check if stack is empty', () => {
         const stack = new Stack();
-        assert.deepEqual(stack.empty(), true);
+        assert.deepEqual(stack.isEmpty(), true);
 
         stack.push(1);
         stack.push(2);
         
-        assert.deepEqual(stack.empty(), false);
+        assert.deepEqual(stack.isEmpty(), false);
     });
 
     it('Should return the top element in the stack', () => {
