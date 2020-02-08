@@ -1,24 +1,25 @@
+//A JavaScript array-based Stack class
 class Stack {
     constructor(){
         this._stack = [];
     }
 
     push(element){
-        this._stack.unshift(element);
+        this._stack.push(element);
     }
 
     pop(){
         if(this._stack.length === 0)
             return undefined;
 
-        this._stack.shift();
+        this._stack.pop();
     }
 
     top(){
         if(this._stack.length === 0)
             return undefined;
         
-        return this._stack[0];
+        return this._stack[this._stack.length - 1];
     }
 
     size(){

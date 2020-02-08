@@ -1,5 +1,5 @@
 const assert = require('assert');
-const Stack = require('../stack');
+const Stack = require('../stackArray');
 
 describe('Stack tests', function(){
     it('Should create a stack', () => {
