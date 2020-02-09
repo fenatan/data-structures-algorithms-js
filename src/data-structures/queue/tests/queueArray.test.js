@@ -1,7 +1,7 @@
 const assert = require('assert');
-const Queue = require('../queue');
+const Queue = require('../queueArray');
 
-describe('Queue tests', function(){
+describe('Queue tests', function () {
     it('Should create a queue', () => {
         const queue = new Queue();
         assert.notEqual(queue, null);
@@ -13,7 +13,7 @@ describe('Queue tests', function(){
         queue.push(1);
         queue.push(2);
 
-        assert.notDeepEqual(queue.queue, []);
+        assert.notDeepEqual(queue._queue, []);
     });
 
     it('Should check size of queue', () => {
@@ -23,18 +23,18 @@ describe('Queue tests', function(){
 
         queue.push(1);
         queue.push(2);
-        
+
         assert.deepEqual(queue.size(), 2);
     });
 
     it('Should check if queue is empty', () => {
         const queue = new Queue();
-        assert.deepEqual(queue.empty(), true);
+        assert.deepEqual(queue.isEmpty(), true);
 
         queue.push(1);
         queue.push(2);
-        
-        assert.deepEqual(queue.empty(), false);
+
+        assert.deepEqual(queue.isEmpty(), false);
     });
 
     it('Should return the next element in the queue', () => {
@@ -43,7 +43,7 @@ describe('Queue tests', function(){
 
         queue.push(1);
         queue.push(2);
-        
+
         assert.deepEqual(queue.front(), 1);
     });
 
@@ -53,7 +53,7 @@ describe('Queue tests', function(){
 
         queue.push(1);
         queue.push(2);
-        
+
         assert.deepEqual(queue.back(), 2);
     });
 
@@ -65,7 +65,17 @@ describe('Queue tests', function(){
         queue.push(2);
 
         queue.pop();
-        
+
         assert.deepEqual(queue.front(), 2);
+    });
+
+    it('Should clear queue', () => {
+        const queue = new Queue();
+
+        queue.push(1);
+        queue.push(2);
+        queue.clear();
+
+        assert.ok(queue.isEmpty());
     });
 });

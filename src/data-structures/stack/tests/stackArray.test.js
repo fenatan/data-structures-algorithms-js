@@ -1,7 +1,7 @@
 const assert = require('assert');
 const Stack = require('../stackArray');
 
-describe('Stack tests', function(){
+describe('Stack tests - Array-based', function(){
     it('Should create a stack', () => {
         const stack = new Stack();
         assert.notEqual(stack, null);
