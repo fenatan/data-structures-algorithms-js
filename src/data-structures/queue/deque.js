@@ -7,16 +7,27 @@ class Deque {
         this._deque = {};
     }
 
-    addFront(){
-
+    addFront(element) {
+        if (this.isEmpty()) {
+            this.addBack(element);
+        } else if (this._frontIndex > 0) {
+            this._frontIndex--;
+            this._deque[this._frontIndex] = element;
+        } else {
+            for (let i = this._backIndex; i > 0; i--)
+                this._deque[i] = this._deque[i - 1];
+            this._backIndex++;
+            this._frontIndex = 0;
+            this._deque[0] = element;
+        }
     }
 
-    addBack(element){
+    addBack(element) {
         this._deque[this._backIndex] = element;
         this._backIndex++;
     }
 
-    removeFront(){
+    removeFront() {
         if (this.size() === 0)
             return undefined;
 
@@ -26,37 +37,37 @@ class Deque {
         return removed;
     }
 
-    removeBack(){
+    removeBack() {
         if (this.size() === 0)
             return undefined;
 
-        const removed = this._deque[this._backIndex-1];
-        delete this._deque[this._backIndex-1];
+        const removed = this._deque[this._backIndex - 1];
+        delete this._deque[this._backIndex - 1];
         this._backIndex--;
         return removed;
     }
 
-    front(){
+    front() {
         if (this.size() === 0)
             return undefined;
         return this._deque[this._frontIndex];
     }
 
-    back(){
+    back() {
         if (this.size() === 0)
             return undefined;
-        return this._deque[this._backIndex -1];
+        return this._deque[this._backIndex - 1];
     }
 
-    isEmpty(){
+    isEmpty() {
         return this.size() === 0;
     }
 
-    size(){
+    size() {
         return this._backIndex - this._frontIndex;
     }
 
-    clear(){
+    clear() {
         this._backIndex = 0;
         this._frontIndex = 0;
         this._deque = {};
