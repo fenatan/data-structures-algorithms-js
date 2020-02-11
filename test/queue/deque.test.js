@@ -1,7 +1,7 @@
 const assert = require('assert');
-const Deque = require('../deque');
+const Deque = require('../../src/data-structures/queue/deque');
 
-describe('Queue tests', function () {
+describe('Deque tests', function () {
     it('Should create a queue', () => {
         const deque = new Deque();
         assert.notEqual(deque, null);

@@ -1,5 +1,5 @@
 const assert = require('assert');
-const Stack = require('../stackArray');
+const Stack = require('../../src/data-structures/stack/stackArray');
 
 describe('Stack tests - Array-based', function(){
     it('Should create a stack', () => {

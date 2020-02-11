@@ -5,4 +5,5 @@ module.exports = {
     Queue: require('./data-structures/queue/queueObject'),
     QueueArray: require('./data-structures/queue/queueArray'),
     Deque: require('./data-structures/queue/deque'),
+    PriorityQueue: require('./data-structures/queue/priorityQueue'),
 }

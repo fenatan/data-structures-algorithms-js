@@ -1,7 +1,7 @@
 const assert = require('assert');
-const Queue = require('../queueArray');
+const Queue = require('../../src/data-structures/queue/queueArray');
 
-describe('Queue tests', function () {
+describe('Queue tests - Array-based', function () {
     it('Should create a queue', () => {
         const queue = new Queue();
         assert.notEqual(queue, null);
