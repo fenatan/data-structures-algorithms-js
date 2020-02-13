@@ -24,7 +24,7 @@ First get yourself Node.js, and then
 OS X & Linux:
 
 ```sh
-npm install dsa-node --save
+$ npm install dsa-node --save
 ```
 
 ## Development setup
@@ -32,13 +32,13 @@ npm install dsa-node --save
 #### To install all development dependencies
 
 ```sh
-npm install
+$ npm install
 ```
 
 #### To run tests
 
 ```sh
-npm test
+$ npm test
 ```
 
 ## [Documentation](https://google.com)
