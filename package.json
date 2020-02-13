@@ -4,7 +4,7 @@
   "description": "Implementation of Algorithms and Data Structures in JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/*.test.js"
+    "test": "nyc --reporter=html mocha --exit test/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/fenatan/data-structures-algorithms-js/issues"
   },
-  "homepage": "https://github.com/fenatan/data-structures-algorithms-js#readme"
+  "homepage": "https://github.com/fenatan/data-structures-algorithms-js#readme",
+  "dependencies": {
+    "istanbul": "^0.4.5"
+  },
+  "devDependencies": {
+    "nyc": "^15.0.0"
+  }
 }
