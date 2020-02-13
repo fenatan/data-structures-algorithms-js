@@ -1,10 +1,6 @@
 # Data Structures and Algorithms
 >Implementation of some Data Structures and Algorithms in JavaScript
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![build:?](https://travis-ci.org/datastructures-js/stack.svg?branch=master)](https://travis-ci.org/datastructures-js/stack) 
-
 ## Data Structures
 - Deque
 - Priority Queue
