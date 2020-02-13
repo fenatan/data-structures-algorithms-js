@@ -1,5 +1,6 @@
 module.exports = {
     /*Data Structures */
+    Set: require('./data-structures/set/set'),
     Stack: require('./data-structures/stack/stackObject'),
     StackArray: require('./data-structures/stack/stackArray'),
     Queue: require('./data-structures/queue/queueObject'),
