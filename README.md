@@ -12,8 +12,10 @@
 - Set
 - Stack
 - Stack(Array-based)
-## Algorithms
 
+## Algorithms
+  - Soon
+ 
 ## Installation
 
 This is Node.js module available through npm.
@@ -24,7 +26,6 @@ OS X & Linux:
 ```sh
 npm install dsa-node --save
 ```
-## [Documentation](https://google.com)
 
 ## Development setup
 
@@ -39,3 +40,6 @@ npm install
 ```sh
 npm test
 ```
+
+## [Documentation](https://google.com)
+You can access the complete documentation
