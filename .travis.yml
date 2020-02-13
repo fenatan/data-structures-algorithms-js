@@ -1,15 +1,10 @@
-sudo: false
-
 language: node_js
 
 node_js:
-  - node
-
-script:
-  - npm run test:coveralls
-
-notifications:
-  email: false
+  - "stable"
+  
+after_success:
+  - npm run coveralls
 
 
 
