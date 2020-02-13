@@ -11,7 +11,7 @@
 - Stack(Array-based)
 
 ## Algorithms
-  - Soon
+  - Not implemented yed :(
  
 ## Installation
 
