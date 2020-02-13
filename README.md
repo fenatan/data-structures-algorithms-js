@@ -1,5 +1,8 @@
 # Data Structures and Algorithms
-Implementation of some Data Structures and Algorithms in JavaScript
+>Implementation of some Data Structures and Algorithms in JavaScript
+
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
 
 ## Data Structures
 - Deque
@@ -10,3 +13,29 @@ Implementation of some Data Structures and Algorithms in JavaScript
 - Stack
 - Stack(Array-based)
 ## Algorithms
+
+## Installation
+
+This is Node.js module available through npm.
+
+First get yourself Node.js, and then
+OS X & Linux:
+
+```sh
+npm install dsa-node --save
+```
+## [Documentation](https://google.com)
+
+## Development setup
+
+#### To install all development dependencies
+
+```sh
+npm install
+```
+
+#### To run tests
+
+```sh
+npm test
+```
