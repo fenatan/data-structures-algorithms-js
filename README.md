@@ -1,6 +1,9 @@
 # Data Structures and Algorithms
 >Implementation of some Data Structures and Algorithms in JavaScript
 
+[![Build Status](https://travis-ci.com/fenatan/data-structures-algorithms-js.svg?branch=master)](https://travis-ci.com/fenatan/data-structures-algorithms-js)
+[![Coverage Status](https://coveralls.io/repos/github/fenatan/data-structures-algorithms-js/badge.svg)](https://coveralls.io/github/fenatan/data-structures-algorithms-js)
+
 ## Data Structures
 - Deque
 - Priority Queue
