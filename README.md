@@ -24,7 +24,7 @@ First get yourself Node.js, and then
 OS X & Linux:
 
 ```sh
-$ npm install dsa-node --save
+$ npm install data-structures-algorithms-js
 ```
 
 ## Development setup
