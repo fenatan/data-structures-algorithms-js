@@ -1,13 +1,13 @@
 {
   "name": "data-structures-algorithms-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Implementation of Algorithms and Data Structures in JavaScript",
   "main": "src/index.js",
   "scripts": {
     "test": "nyc --reporter=html mocha --exit test/**/*.test.js",
     "cover": "istanbul cover _mocha test/**/*.test.js",
     "coveralls": "npm run cover --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "doc": "jsdoc -c jsdoc.json"
+    "doc": "rm -r ./docs && jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
