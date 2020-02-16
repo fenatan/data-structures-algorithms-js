@@ -41,8 +41,8 @@ $ npm install
 $ npm test
 ```
 
-## [Documentation](https://google.com)
-You can access the complete documentation
+## Documentation
+You can access the complete documentation [here](https://fenatan.github.io/data-structures-algorithms-js/index.html)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
