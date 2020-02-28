@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: set/set.js | Source: set/set.js</title>
+    <title>Source: queue/priorityQueue.js | Source: queue/priorityQueue.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -26,7 +26,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Source: set/set.js</a></h1>
+        <h1><a href="index.html" class="link">Source: queue/priorityQueue.js</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -46,151 +46,143 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/* eslint-disable no-plusplus */
-/* eslint-disable no-underscore-dangle */
-/**
- * This class contains all methods to simulate a SET data-structure
+            <pre class="prettyprint source linenums"><code>/**
+ * This class is a Priority Queue implementation. This data-structure allows add and remove elements
+ * with priorities. The queue is always ordered by the highest priority.
  */
-class Set {
+class PriorityQueue {
   /**
-   * Create a SET data-structure
+   * Creates a PRIORITY-QUEUE data-structure
    * @example
-   * const { Set } = require('data-structures-algorithms-js');
-   * const set = new Set();
+   * const { PriorityQueue } = require('data-structures-algorithms-js');
+   * const pq = new PriorityQueue();
    */
   constructor() {
-    this._set = {};
-    this._count = 0;
+    this._priorityQueue = [];
   }
-
   /**
-   * Add a element into the SET data-structure
-   *
+   * Adds a element at the Priority-Queue
    * @param {*} element Element passed to insert
-   * @returns {Boolean} If element was added into the SET
+   * @param {Integer} priority Priority can be any integer number 
    * @example
-   * const { Set } = require('data-structures-algorithms-js');
-   * const set = new set();
+   * const { PriorityQueue } = require('data-structures-algorithms-js');
+   * const pq = new PriorityQueue();
    *
-   * set.insert(2); //return true
-   * set.insert(38); //return true
-   * set.insert(2); //return false
+   * pq.push(10, 2); //inserts element 10 with priority 2
    */
-  insert(element) {
-    if (this.find(element)) return false;
-    this._set[element] = element;
-    this._count++;
-    return true;
-  }
+  push(element, priority = 0) {
+    element = [element, priority]
+    if (this.size() === 0) {
+      this._priorityQueue.push(element);
+    } else {
+      let flag = false;
 
-  /**
-   * Remove a element from the SET data-structure
-   * @param {*} element Element passed to remove
-   * @returns {Boolean} If element was removed from the SET
-   * @example
-   * const { Set } = require('data-structures-algorithms-js');
-   * const set = new Set();
-   *
-   * set.insert(25);
-   * set.insert(3);
-   *
-   * set.erase(3); //return true
-   * set.erase(42); //return false;
-   */
-  erase(element) {
-    if (!this.find(element)) return false;
-    delete this._set[element];
-    this._count--;
-    return true;
-  }
+      for (let i = 0; i &lt; this.size(); i++) {
+        if (element[1] > this._priorityQueue[i][1]) {
+          this._priorityQueue.splice(i, 0, element);
+          flag = true;
+          break;
+        }
+      }
 
-  /**
-   * Return all elements in the SET data-structure
-   *
-   * @returns {Array} Return an ordered Array
-   * @example
-   * const { Set } = require('data-structures-algorithms-js');
-   * const set = new set();
-   *
-   * set.insert(55);
-   * set.insert(36);
-   * set.insert(78);
-   *
-   * set.values(); //return [36, 55, 78]
-   */
-  values() {
-    const items = [];
-    for (const i in this._set) {
-      items.push(this._set[i]);
+      if (!flag) this._priorityQueue.push(element);
     }
-    return items;
   }
-
-  /**
-   * Find a specific element in the SET data-structure
-   * @param {*} Element Element to find
-   * @returns {Boolean}
+   /**
+   * removes the first element at the Priority Queue
    * @example
-   * const { Set } = require('data-structures-algorithms-js');
-   * const set = new Set();
+   * const { PriorityQueue } = require('data-structures-algorithms-js');
+   * const pq = new PriorityQueue();
    *
-   * set.find(5); //return false
+   * pq.push(3, 8);
+   * pq.push(9, 10);
+   *
+   * pq.pop(); //removes number 9 from the Priority Queue
    */
-  find(element) {
-    return element in this._set;
+  pop() {
+    if (this.size() === 0) return undefined;
+    return this._priorityQueue.shift()[0];
   }
-
   /**
-   * Return the size of the SET data-structure
-   * @returns {Number} The number of elements in SET
+   * Returns the element at the back of Priority Queue
+   * @returns {*} The element at the back
    * @example
-   * const { Set } = require('data-structures-algorithms-js');
-   * const set = new Set();
+   * const { PriorityQueue } = require('data-structures-algorithms-js');
+   * const pq = new PriorityQueue();
    *
-   * set.size(); // return 0;
+   * pq.push(6); 
+   * pq.push(3, -2);
    *
-   * set.insert(8);
+   * pq.back(); //returns 3;
+   */
+  back() {
+    if (this.size() === 0) return undefined;
+    return this._priorityQueue[this.size() - 1][0];
+  }
+  /**
+   * Returns the element at the front of the Priority Queue
+   * @returns {*} The element at the front
+   * @example
+   * const { PriorityQueue } = require('data-structures-algorithms-js');
+   * const pq = new PriorityQueue();
    *
-   * set.size(); //return 1;
+   * pq.push(6); 
+   * pq.push(3);
+   *
+   * pq.front(); //returns 6;
+   */
+  front() {
+    if (this.size() === 0) return undefined;
+    return this._priorityQueue[0][0];
+  }
+  /**
+   * Returns the size of the Priority Queue
+   * @returns {Number} The number of elements in the Priority Queue
+   * @example
+   * const { PriorityQueue } = require('data-structures-algorithms-js');
+   * const pq = new PriorityQueue();
+   *
+   * pq.size(); // returns 0;
+   *
+   * pq.push(8, 10);
+   *
+   * pq.size(); //returns 1;
    */
   size() {
-    return this._count;
+    return this._priorityQueue.length;
   }
-
   /**
-   * Return if the SET data-structure is empty
+   * Returns if the Priority Queue is empty
    * @returns {Boolean}
    * @example
-   * const { Set } = require('data-structures-algorithms-js');
-   * const set = new Set();
+   * const { PriorityQueue } = require('data-structures-algorithms-js');
+   * const pq = new PriorityQueue();
    *
-   * set.isEmpty(); // return true;
+   * pq.isEmpty(); // returns true;
    *
-   * set.insert(15);
+   * pq.push(23, 9);
    *
-   * set.isEmpty(); //return false;
+   * pq.isEmpty(); //returns false;
    */
   isEmpty() {
     return this.size() === 0;
   }
-
   /**
-   * Reset the SET data-structure
+   * Resets the the Priority Queue
    * @example
-   * const { Set } = require('data-structures-algorithms-js');
-   * const set = new Set();
+   * const { PriorityQueue } = require('data-structures-algorithms-js');
+   * const pq = new PriorityQueue();
    *
-   * set.insert(15);
+   * pq.push(15);
    *
-   * set.clear();
+   * pq.clear(); // now Priority Queue is empty
    */
   clear() {
-    this._set = {};
-    this._count = 0;
+    this._priorityQueue = [];
   }
 }
 
-module.exports = Set;
+module.exports = PriorityQueue;
 </code></pre>
         </article>
     </section>

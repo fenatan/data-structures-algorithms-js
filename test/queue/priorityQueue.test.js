@@ -11,8 +11,8 @@ describe('Priority-Queue tests', function () {
     it('Should add one element on the Priority-Queue', () => {
         const priorityQueue = new PriorityQueue();
 
-        priorityQueue.push(['Spider Man', 5]);
-        priorityQueue.push(['Iron Man', 10]);
+        priorityQueue.push('Spider Man', 5);
+        priorityQueue.push('Iron Man', 10);
 
         assert.notDeepEqual(priorityQueue._priorityQueue, []);
     });
@@ -21,8 +21,8 @@ describe('Priority-Queue tests', function () {
         const priorityQueue = new PriorityQueue();
         assert.deepEqual(priorityQueue.size(), 0);
 
-        priorityQueue.push(['Spider Man', 5]);
-        priorityQueue.push(['Iron Man', 10]);
+        priorityQueue.push('Spider Man', 5);
+        priorityQueue.push('Iron Man', 10);
 
         assert.deepEqual(priorityQueue.size(), 2);
     });
@@ -31,8 +31,8 @@ describe('Priority-Queue tests', function () {
         const priorityQueue = new PriorityQueue();
         assert.ok(priorityQueue.isEmpty());
 
-        priorityQueue.push(['Spider Man', 5]);
-        priorityQueue.push(['Iron Man', 10]);
+        priorityQueue.push('Spider Man', 5);
+        priorityQueue.push('Iron Man', 10);
 
         assert.ok(!priorityQueue.isEmpty());
     });
@@ -41,9 +41,9 @@ describe('Priority-Queue tests', function () {
         const priorityQueue = new PriorityQueue();
         assert.deepEqual(priorityQueue.back(), undefined);
 
-        priorityQueue.push(['Spider Man', 5]);
-        priorityQueue.push(['Hulk', 2]);
-        priorityQueue.push(['Iron Man', 10]);
+        priorityQueue.push('Spider Man', 5);
+        priorityQueue.push('Hulk', 2);
+        priorityQueue.push('Iron Man', 10);
 
         assert.deepEqual(priorityQueue.back(), 'Hulk');
     });
@@ -52,9 +52,9 @@ describe('Priority-Queue tests', function () {
         const priorityQueue = new PriorityQueue();
         assert.deepEqual(priorityQueue.front(), undefined);
 
-        priorityQueue.push(['Spider Man', 5]);
-        priorityQueue.push(['Hulk', 2]);
-        priorityQueue.push(['Iron Man', 10]);
+        priorityQueue.push('Spider Man', 5);
+        priorityQueue.push('Hulk', 2);
+        priorityQueue.push('Iron Man', 10);
 
         assert.deepEqual(priorityQueue.front(), 'Iron Man');
     });
@@ -63,9 +63,9 @@ describe('Priority-Queue tests', function () {
         const priorityQueue = new PriorityQueue();
         assert.deepEqual(priorityQueue.pop(), undefined);
 
-        priorityQueue.push(['Spider Man', 5]);
-        priorityQueue.push(['Hulk', 2]);
-        priorityQueue.push(['Iron Man', 10]);
+        priorityQueue.push('Spider Man', 5);
+        priorityQueue.push('Hulk', 2);
+        priorityQueue.push('Iron Man', 10);
 
         assert.deepEqual(priorityQueue.pop(), 'Iron Man');
     });
@@ -74,10 +74,10 @@ describe('Priority-Queue tests', function () {
         const priorityQueue = new PriorityQueue();
         assert.deepEqual(priorityQueue.size(), 0);
 
-        priorityQueue.push(['Spider Man', 5]);
-        priorityQueue.push(['Hulk', 2]);
+        priorityQueue.push('Spider Man', 5);
+        priorityQueue.push('Hulk', 2);
         priorityQueue.pop()
-        priorityQueue.push(['Iron Man', 10]);
+        priorityQueue.push('Iron Man', 10);
 
         assert.deepEqual(priorityQueue.front(), 'Iron Man');
 
