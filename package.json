@@ -26,18 +26,10 @@
   "homepage": "https://github.com/fenatan/data-structures-algorithms-js#readme",
   "devDependencies": {
     "coveralls": "^3.0.9",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1",
     "istanbul": "^0.4.5",
     "jsdoc": "^3.6.3",
     "mocha": "^7.0.1",
     "nyc": "^15.0.0",
     "tui-jsdoc-template": "^1.2.2"
-  },
-  "dependencies": {
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1"
   }
 }
