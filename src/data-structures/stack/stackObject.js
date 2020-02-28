@@ -1,6 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-underscore-dangle */
-
 /**
  * This class is a Stack implementation based on JavaScript-Object
  */

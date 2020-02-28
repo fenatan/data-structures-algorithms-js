@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: Set | Class: Set</title>
+    <title>Class: Deque | Class: Deque</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -24,7 +24,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Class: Set</a></h1>
+        <h1><a href="index.html" class="link">Class: Deque</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -46,9 +46,10 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Set<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Deque<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>This class contains all methods to simulate a SET data-structure</p></div>
+            <div class="class-description"><p>This class is a Deque implementation. This data-structure allows add and remove elements
+at the front or at the back.</p></div>
         
     
 </header>
@@ -61,14 +62,14 @@
 
 <dt>
     
-        <h4 class="name" id="Set">
+        <h4 class="name" id="Deque">
             
-                new <span class="type-signature"></span>Set<span class="signature">()</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>Deque<span class="signature">()</span><span class="type-signature"></span>
                 
             
             <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line13">line 13</a></code>
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line12">line 12</a></code>
             </div>
             
         </h4>
@@ -80,7 +81,7 @@
 
     
     <div class="description">
-        <p>Create a SET data-structure</p>
+        <p>Create a DEQUE data-structure</p>
     </div>
     
 
@@ -144,8 +145,8 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();</code></pre>
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();</code></pre>
 
     
 
@@ -177,14 +178,14 @@ const set = new Set();</code></pre>
 
 <dt>
     
-        <h4 class="name" id="clear">
+        <h4 class="name" id="addBack">
             
-                <span class="type-signature"></span>clear<span class="signature">()</span><span class="type-signature"></span>
+                <span class="type-signature"></span>addBack<span class="signature">(element)</span><span class="type-signature"></span>
                 
             
             <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line139">line 139</a></code>
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line51">line 51</a></code>
             </div>
             
         </h4>
@@ -196,444 +197,7 @@ const set = new Set();</code></pre>
 
     
     <div class="description">
-        <p>Reset the SET data-structure</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
-
-set.insert(15);
-
-set.clear();</code></pre>
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="erase">
-            
-                <span class="type-signature"></span>erase<span class="signature">(element)</span><span class="type-signature"> &rarr; {Boolean}</span>
-                
-            
-            <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line52">line 52</a></code>
-            </div>
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Remove a element from the SET data-structure</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>element</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Element passed to remove</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Boolean</span>
-
-
-
-
-
-- <p>If element was removed from the SET</p>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
-
-set.insert(25);
-set.insert(3);
-
-set.erase(3); //return true
-set.erase(42); //return false;</code></pre>
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="find">
-            
-                <span class="type-signature"></span>find<span class="signature">(Element)</span><span class="type-signature"> &rarr; {Boolean}</span>
-                
-            
-            <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line91">line 91</a></code>
-            </div>
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Find a specific element in the SET data-structure</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>Element</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Element to find</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Boolean</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
-
-set.find(5); //return false</code></pre>
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="insert">
-            
-                <span class="type-signature"></span>insert<span class="signature">(element)</span><span class="type-signature"> &rarr; {Boolean}</span>
-                
-            
-            <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line31">line 31</a></code>
-            </div>
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Add a element into the SET data-structure</p>
+        <p>Add a element at the back of the DEQUE</p>
     </div>
     
 
@@ -706,6 +270,250 @@ set.find(5); //return false</code></pre>
     
 
     
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();
+
+deque.addBack(87); //insert 87 at the back of the deque</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="addFront">
+            
+                <span class="type-signature"></span>addFront<span class="signature">(element)</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line27">line 27</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Add a element at the front of the DEQUE</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Element passed to insert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();
+
+deque.addFront(55); //insert 55 at the front of the deque</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="back">
+            
+                <span class="type-signature"></span>back<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line121">line 121</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Return the element at the back of DEQUE</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
     <div class="container-returns">
         <h5>Returns:</h5>
         
@@ -713,13 +521,13 @@ set.find(5); //return false</code></pre>
 
 
 
-<span class="param-type">Boolean</span>
+<span class="param-type">*</span>
 
 
 
 
 
-- <p>If element was added into the SET</p>
+- <p>The element at the back</p>
 
 
 
@@ -768,12 +576,234 @@ set.find(5); //return false</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new set();
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();
 
-set.insert(2); //return true
-set.insert(38); //return true
-set.insert(2); //return false</code></pre>
+deque.addFront(6); 
+deque.addBack(3);
+
+deque.back(); //return 3;</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="clear">
+            
+                <span class="type-signature"></span>clear<span class="signature">()</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line168">line 168</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Reset the DEQUE data-structure</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();
+
+deque.addFront(15);
+deque.addBack(9);
+
+deque.clear(); // now deque is empty</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="front">
+            
+                <span class="type-signature"></span>front<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line105">line 105</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Return the element at the front of DEQUE</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">*</span>
+
+
+
+
+
+- <p>The element at the front</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();
+
+deque.addFront(6); 
+deque.addBack(3);
+
+deque.front(); //return 6;</code></pre>
 
     
 
@@ -790,8 +820,8 @@ set.insert(2); //return false</code></pre>
                 
             
             <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line125">line 125</a></code>
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line138">line 138</a></code>
             </div>
             
         </h4>
@@ -803,7 +833,7 @@ set.insert(2); //return false</code></pre>
 
     
     <div class="description">
-        <p>Return if the SET data-structure is empty</p>
+        <p>Return if the DEQUE data-structure is empty</p>
     </div>
     
 
@@ -886,14 +916,214 @@ set.insert(2); //return false</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();
 
-set.isEmpty(); // return true;
+deque.isEmpty(); // return true;
 
-set.insert(15);
+deque.addBack(23);
 
-set.isEmpty(); //return false;</code></pre>
+deque.isEmpty(); //return false;</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="removeBack">
+            
+                <span class="type-signature"></span>removeBack<span class="signature">()</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line85">line 85</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Remove an element from the end of the DEQUE</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();
+
+deque.addFront(59); 
+deque.addFront(14);
+
+deque.removeBack(); //remove 59 from the deque</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="removeFront">
+            
+                <span class="type-signature"></span>removeFront<span class="signature">()</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line66">line 66</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Remove an element from the beginning of the DEQUE</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();
+
+deque.addFront(59); 
+deque.addFront(14);
+
+deque.removeFront(); //remove 14 from the deque</code></pre>
 
     
 
@@ -910,8 +1140,8 @@ set.isEmpty(); //return false;</code></pre>
                 
             
             <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line108">line 108</a></code>
+                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
+                <code><a href="queue_deque.js.html#line154">line 154</a></code>
             </div>
             
         </h4>
@@ -923,7 +1153,7 @@ set.isEmpty(); //return false;</code></pre>
 
     
     <div class="description">
-        <p>Return the size of the SET data-structure</p>
+        <p>Return the size of the DEQUE data-structure</p>
     </div>
     
 
@@ -959,7 +1189,7 @@ set.isEmpty(); //return false;</code></pre>
 
 
 
-- <p>The number of elements in SET</p>
+- <p>The number of elements in the DEQUE</p>
 
 
 
@@ -1008,136 +1238,14 @@ set.isEmpty(); //return false;</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
+    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
+const deque = new Deque();
 
-set.size(); // return 0;
+deque.size(); // return 0;
 
-set.insert(8);
+deque.addFront(8);
 
-set.size(); //return 1;</code></pre>
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="values">
-            
-                <span class="type-signature"></span>values<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span>
-                
-            
-            <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line73">line 73</a></code>
-            </div>
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Return all elements in the SET data-structure</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Array</span>
-
-
-
-
-
-- <p>Return an ordered Array</p>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new set();
-
-set.insert(55);
-set.insert(36);
-set.insert(78);
-
-set.values(); //return [36, 55, 78]</code></pre>
+deque.size(); //return 1;</code></pre>
 
     
 
@@ -1168,7 +1276,7 @@ set.values(); //return [36, 55, 78]</code></pre>
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'Set_sub'.replace(/"/g, '_');
+        var id = 'Deque_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 

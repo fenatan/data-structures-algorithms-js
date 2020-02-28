@@ -34,7 +34,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Set.html">Set</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Set_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Set.html#clear">clear</a></li><li><a href="Set.html#erase">erase</a></li><li><a href="Set.html#find">find</a></li><li><a href="Set.html#insert">insert</a></li><li><a href="Set.html#isEmpty">isEmpty</a></li><li><a href="Set.html#size">size</a></li><li><a href="Set.html#values">values</a></li></ul></div></li><li><a href="Stack.html">Stack</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Stack_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Stack.html#clear">clear</a></li><li><a href="Stack.html#isEmpty">isEmpty</a></li><li><a href="Stack.html#pop">pop</a></li><li><a href="Stack.html#push">push</a></li><li><a href="Stack.html#size">size</a></li><li><a href="Stack.html#top">top</a></li></ul></div></li><li><a href="StackArray.html">StackArray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="StackArray_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="StackArray.html#clear">clear</a></li><li><a href="StackArray.html#isEmpty">isEmpty</a></li><li><a href="StackArray.html#pop">pop</a></li><li><a href="StackArray.html#push">push</a></li><li><a href="StackArray.html#size">size</a></li><li><a href="StackArray.html#top">top</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Deque.html">Deque</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Deque_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Deque.html#addBack">addBack</a></li><li><a href="Deque.html#addFront">addFront</a></li><li><a href="Deque.html#back">back</a></li><li><a href="Deque.html#clear">clear</a></li><li><a href="Deque.html#front">front</a></li><li><a href="Deque.html#isEmpty">isEmpty</a></li><li><a href="Deque.html#removeBack">removeBack</a></li><li><a href="Deque.html#removeFront">removeFront</a></li><li><a href="Deque.html#size">size</a></li></ul></div></li><li><a href="Set.html">Set</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Set_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Set.html#clear">clear</a></li><li><a href="Set.html#erase">erase</a></li><li><a href="Set.html#find">find</a></li><li><a href="Set.html#insert">insert</a></li><li><a href="Set.html#isEmpty">isEmpty</a></li><li><a href="Set.html#size">size</a></li><li><a href="Set.html#values">values</a></li></ul></div></li><li><a href="Stack.html">Stack</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Stack_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Stack.html#clear">clear</a></li><li><a href="Stack.html#isEmpty">isEmpty</a></li><li><a href="Stack.html#pop">pop</a></li><li><a href="Stack.html#push">push</a></li><li><a href="Stack.html#size">size</a></li><li><a href="Stack.html#top">top</a></li></ul></div></li><li><a href="StackArray.html">StackArray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="StackArray_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="StackArray.html#clear">clear</a></li><li><a href="StackArray.html#isEmpty">isEmpty</a></li><li><a href="StackArray.html#pop">pop</a></li><li><a href="StackArray.html#push">push</a></li><li><a href="StackArray.html#size">size</a></li><li><a href="StackArray.html#top">top</a></li></ul></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -47,117 +47,122 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * This class is a Stack implementation based on JavaScript-Object 
+ * This class is a Stack implementation based on JavaScript-Object
  */
 class Stack {
-    /** 
-     * Create a STACK data-structure
-     * @example
-     * const { Stack } = require('data-structures-algorithms-js');
-     * const stack = new Stack();
-     */
-    constructor() {
-        this._count = 0;
-        this._stack = {};
-    }
-    /**
-     * Add a element to the top of the STACK
-     * @param {*} element Element passed to insert
-     * @example
-     * const { Stack } = require('data-structures-algorithms-js');
-     * const stack = new Stack();
-     * 
-     * stack.push(5); //insert 5 to the top of the stack
-     */
-    push(element) {
-        this._stack[this._count] = element;
-        this._count++;
-    }
-    /**
-     * Remove a element from the top of the STACK
-     * @example
-     * const { Stack } = require('data-structures-algorithms-js');
-     * const stack = new Stack();
-     * 
-     * stack.push(3);
-     * stack.push(9);
-     * 
-     * stack.pop(); //remove number 9
-     */
-    pop() {
-        if (this._count === 0)
-            return undefined;
-        delete this._stack[this._count - 1];
-        this._count--;
-    }
-    /**
-     * Return the element on the top of the STACK
-     * @returns {*|undefined} Return the element on the top or undefined if stack is empty 
-     * @example
-     * const { Stack } = require('data-structures-algorithms-js');
-     * const stack = new Stack();
-     * 
-     * stack.top();// return undefined
-     * 
-     * stack.push(23);
-     * stack.push(89);
-     * 
-     * stack.top(); //return 89
-     */
-    top() {
-        if (this._count === 0)
-            return undefined;
-        return this._stack[this._count - 1];
-    }
-    /**
-     * Return the size of the STACK data-structure
-     * @returns {Number} The number of elements in the STACK
-     * @example
-     * const { Stack } = require('data-structures-algorithms-js');
-     * const stack = new Stack(); 
-     * 
-     * stack.size(); // return 0;
-     * 
-     * stack.push(8);
-     * 
-     * stack.size(); //return 1;
-     */
-    size() {
-        return this._count;
-    }
-    /**
-     * Reset the STACK data-structure
-     * @example
-     * const { Stack } = require('data-structures-algorithms-js');
-     * const stack = new Stack();  
-     * 
-     * stack.push(15);
-     * 
-     * stack.clear(); // now stack is empty
-     */
-    clear() {
-        this._stack = {};
-        this._count = 0;
-    }
-     /**
-     * Return if the STACK data-structure is empty
-     * @returns {Boolean} 
-     * @example
-     * const { Stack } = require('data-structures-algorithms-js');
-     * const stack = new Stack(); 
-     * 
-     * stack.isEmpty(); // return true;
-     * 
-     * stack.push(23);
-     * 
-     * stack.isEmpty(); //return false;
-     */
-    isEmpty() {
-        return this._count === 0;
-    }
+  /**
+   * Create a STACK data-structure
+   * @example
+   * const { Stack } = require('data-structures-algorithms-js');
+   * const stack = new Stack();
+   */
+  constructor() {
+    this._count = 0;
+    this._stack = {};
+  }
+
+  /**
+   * Add a element to the top of the STACK
+   * @param {*} element Element passed to insert
+   * @example
+   * const { Stack } = require('data-structures-algorithms-js');
+   * const stack = new Stack();
+   *
+   * stack.push(5); //insert 5 to the top of the stack
+   */
+  push(element) {
+    this._stack[this._count] = element;
+    this._count++;
+  }
+
+  /**
+   * Remove a element from the top of the STACK
+   * @example
+   * const { Stack } = require('data-structures-algorithms-js');
+   * const stack = new Stack();
+   *
+   * stack.push(3);
+   * stack.push(9);
+   *
+   * stack.pop(); //remove number 9
+   */
+  pop() {
+    if (this._count === 0) return undefined;
+    delete this._stack[this._count - 1];
+    this._count--;
+  }
+
+  /**
+   * Return the element on the top of the STACK
+   * @returns {*|undefined} Return the element on the top or undefined if stack is empty
+   * @example
+   * const { Stack } = require('data-structures-algorithms-js');
+   * const stack = new Stack();
+   *
+   * stack.top();// return undefined
+   *
+   * stack.push(23);
+   * stack.push(89);
+   *
+   * stack.top(); //return 89
+   */
+  top() {
+    if (this._count === 0) return undefined;
+    return this._stack[this._count - 1];
+  }
+
+  /**
+   * Return the size of the STACK data-structure
+   * @returns {Number} The number of elements in the STACK
+   * @example
+   * const { Stack } = require('data-structures-algorithms-js');
+   * const stack = new Stack();
+   *
+   * stack.size(); // return 0;
+   *
+   * stack.push(8);
+   *
+   * stack.size(); //return 1;
+   */
+  size() {
+    return this._count;
+  }
+
+  /**
+   * Reset the STACK data-structure
+   * @example
+   * const { Stack } = require('data-structures-algorithms-js');
+   * const stack = new Stack();
+   *
+   * stack.push(15);
+   *
+   * stack.clear(); // now stack is empty
+   */
+  clear() {
+    this._stack = {};
+    this._count = 0;
+  }
+
+  /**
+   * Return if the STACK data-structure is empty
+   * @returns {Boolean}
+   * @example
+   * const { Stack } = require('data-structures-algorithms-js');
+   * const stack = new Stack();
+   *
+   * stack.isEmpty(); // return true;
+   *
+   * stack.push(23);
+   *
+   * stack.isEmpty(); //return false;
+   */
+  isEmpty() {
+    return this._count === 0;
+  }
 }
 
-module.exports = Stack;</code></pre>
+module.exports = Stack;
+</code></pre>
         </article>
     </section>
 
