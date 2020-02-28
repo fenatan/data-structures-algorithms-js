@@ -3,7 +3,7 @@
  */
 class Stack {
   /**
-   * Create a STACK data-structure
+   * Creates a STACK data-structure
    * @example
    * const { Stack } = require('data-structures-algorithms-js');
    * const stack = new Stack();
@@ -14,13 +14,13 @@ class Stack {
   }
 
   /**
-   * Add a element to the top of the STACK
+   * Adds a element to the top of the STACK
    * @param {*} element Element passed to insert
    * @example
    * const { Stack } = require('data-structures-algorithms-js');
    * const stack = new Stack();
    *
-   * stack.push(5); //insert 5 to the top of the stack
+   * stack.push(5); //inserts 5 to the top of the stack
    */
   push(element) {
     this._stack[this._count] = element;
@@ -28,7 +28,7 @@ class Stack {
   }
 
   /**
-   * Remove a element from the top of the STACK
+   * Removes a element from the top of the STACK
    * @example
    * const { Stack } = require('data-structures-algorithms-js');
    * const stack = new Stack();
@@ -36,7 +36,7 @@ class Stack {
    * stack.push(3);
    * stack.push(9);
    *
-   * stack.pop(); //remove number 9
+   * stack.pop(); //removes number 9
    */
   pop() {
     if (this._count === 0) return undefined;
@@ -45,18 +45,18 @@ class Stack {
   }
 
   /**
-   * Return the element on the top of the STACK
-   * @returns {*|undefined} Return the element on the top or undefined if stack is empty
+   * Returns the element on the top of the STACK
+   * @returns {*|undefined} Returns the element on the top or undefined if stack is empty
    * @example
    * const { Stack } = require('data-structures-algorithms-js');
    * const stack = new Stack();
    *
-   * stack.top();// return undefined
+   * stack.top();// returns undefined
    *
    * stack.push(23);
    * stack.push(89);
    *
-   * stack.top(); //return 89
+   * stack.top(); //returns 89
    */
   top() {
     if (this._count === 0) return undefined;
@@ -64,24 +64,24 @@ class Stack {
   }
 
   /**
-   * Return the size of the STACK data-structure
+   * Returns the size of the STACK data-structure
    * @returns {Number} The number of elements in the STACK
    * @example
    * const { Stack } = require('data-structures-algorithms-js');
    * const stack = new Stack();
    *
-   * stack.size(); // return 0;
+   * stack.size(); // returns 0;
    *
    * stack.push(8);
    *
-   * stack.size(); //return 1;
+   * stack.size(); //returns 1;
    */
   size() {
     return this._count;
   }
 
   /**
-   * Reset the STACK data-structure
+   * Resets the STACK data-structure
    * @example
    * const { Stack } = require('data-structures-algorithms-js');
    * const stack = new Stack();
@@ -96,17 +96,17 @@ class Stack {
   }
 
   /**
-   * Return if the STACK data-structure is empty
+   * Returns if the STACK data-structure is empty
    * @returns {Boolean}
    * @example
    * const { Stack } = require('data-structures-algorithms-js');
    * const stack = new Stack();
    *
-   * stack.isEmpty(); // return true;
+   * stack.isEmpty(); // returns true;
    *
    * stack.push(23);
    *
-   * stack.isEmpty(); //return false;
+   * stack.isEmpty(); //returns false;
    */
   isEmpty() {
     return this._count === 0;

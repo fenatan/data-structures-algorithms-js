@@ -4,7 +4,7 @@
  */
 class Deque {
   /**
-   * Create a DEQUE data-structure
+   * Creates a DEQUE data-structure
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
    * const deque = new Deque();
@@ -16,13 +16,13 @@ class Deque {
   }
 
    /**
-   * Add a element at the front of the DEQUE
+   * Adds a element at the front of the DEQUE
    * @param {*} element Element passed to insert
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
    * const deque = new Deque();
    *
-   * deque.addFront(55); //insert 55 at the front of the deque
+   * deque.addFront(55); //inserts 55 at the front of the deque
    */
   addFront(element) {
     if (this.isEmpty()) {
@@ -40,20 +40,20 @@ class Deque {
   }
 
   /**
-   * Add a element at the back of the DEQUE
+   * Adds a element at the back of the DEQUE
    * @param {*} element Element passed to insert
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
    * const deque = new Deque();
    *
-   * deque.addBack(87); //insert 87 at the back of the deque
+   * deque.addBack(87); //inserts 87 at the back of the deque
    */
   addBack(element) {
     this._deque[this._backIndex] = element;
     this._backIndex++;
   }
    /**
-   * Remove an element from the beginning of the DEQUE
+   * Removes an element from the beginning of the DEQUE
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
    * const deque = new Deque();
@@ -61,7 +61,7 @@ class Deque {
    * deque.addFront(59); 
    * deque.addFront(14);
    * 
-   * deque.removeFront(); //remove 14 from the deque
+   * deque.removeFront(); //removes 14 from the deque
    */
   removeFront() {
     if (this.size() === 0) return undefined;
@@ -72,7 +72,7 @@ class Deque {
     return removed;
   }
   /**
-   * Remove an element from the end of the DEQUE
+   * Removes an element from the end of the DEQUE
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
    * const deque = new Deque();
@@ -80,7 +80,7 @@ class Deque {
    * deque.addFront(59); 
    * deque.addFront(14);
    * 
-   * deque.removeBack(); //remove 59 from the deque
+   * deque.removeBack(); //removes 59 from the deque
    */
   removeBack() {
     if (this.size() === 0) return undefined;
@@ -91,7 +91,7 @@ class Deque {
     return removed;
   }
   /**
-   * Return the element at the front of DEQUE
+   * Returns the element at the front of DEQUE
    * @returns {*} The element at the front
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
@@ -100,14 +100,14 @@ class Deque {
    * deque.addFront(6); 
    * deque.addBack(3);
    *
-   * deque.front(); //return 6;
+   * deque.front(); //returns 6;
    */
   front() {
     if (this.size() === 0) return undefined;
     return this._deque[this._frontIndex];
   }
   /**
-   * Return the element at the back of DEQUE
+   * Returns the element at the back of DEQUE
    * @returns {*} The element at the back
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
@@ -116,46 +116,46 @@ class Deque {
    * deque.addFront(6); 
    * deque.addBack(3);
    *
-   * deque.back(); //return 3;
+   * deque.back(); //returns 3;
    */
   back() {
     if (this.size() === 0) return undefined;
     return this._deque[this._backIndex - 1];
   }
   /**
-   * Return if the DEQUE data-structure is empty
+   * Returns if the DEQUE data-structure is empty
    * @returns {Boolean} 
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
    * const deque = new Deque();
    *
-   * deque.isEmpty(); // return true;
+   * deque.isEmpty(); // returns true;
    *
    * deque.addBack(23);
    *
-   * deque.isEmpty(); //return false;
+   * deque.isEmpty(); //returns false;
    */
   isEmpty() {
     return this.size() === 0;
   }
    /**
-   * Return the size of the DEQUE data-structure
+   * Returns the size of the DEQUE data-structure
    * @returns {Number} The number of elements in the DEQUE
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
    * const deque = new Deque();
    *
-   * deque.size(); // return 0;
+   * deque.size(); // returns 0;
    *
    * deque.addFront(8);
    *
-   * deque.size(); //return 1;
+   * deque.size(); //returns 1;
    */
   size() {
     return this._backIndex - this._frontIndex;
   }
   /**
-   * Reset the DEQUE data-structure
+   * Resets the DEQUE data-structure
    * @example
    * const { Deque } = require('data-structures-algorithms-js');
    * const deque = new Deque();
