@@ -6,18 +6,6 @@ class LinkedList {
         this._head = null;
     }
 
-    size() {
-        return this._count;
-    }
-
-    head() {
-        return this._head;
-    }
-
-    isEmpty() {
-        return this.size() === 0;
-    }
-
     // Add a element at the end of the list
     push(element) {
         const node = new Node(element);
@@ -96,6 +84,23 @@ class LinkedList {
             currentNode = currentNode.next;
         }
         return -1;
+    }
+
+    size() {
+        return this._count;
+    }
+
+    head() {
+        return this._head;
+    }
+
+    isEmpty() {
+        return this.size() === 0;
+    }
+
+    clear(){
+        this._count = 0;
+        this._head = null;
     }
 }
 

@@ -128,4 +128,27 @@ describe('Linked-List tests', function () {
             });
         });
     });
+
+    it('should return if the linked list is empty', () => {
+        const linkedList = new LinkedList();
+
+        assert.ok(linkedList.isEmpty());
+
+        linkedList.push(2);
+        linkedList.push(4);
+
+
+        assert.ok(!linkedList.isEmpty());
+    });
+
+    it('should clear the linked list', () => {
+        const linkedList = new LinkedList();
+
+        linkedList.push(2);
+        linkedList.push(4);
+
+        linkedList.clear();
+
+        assert.deepEqual(linkedList.size(), 0);
+    });
 });
