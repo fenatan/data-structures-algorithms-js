@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: queue/priorityQueue.js | Source: queue/priorityQueue.js</title>
+    <title>Source: queue/queueArray.js | Source: queue/queueArray.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -26,7 +26,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Source: queue/priorityQueue.js</a></h1>
+        <h1><a href="index.html" class="link">Source: queue/queueArray.js</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -46,143 +46,139 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * This class is a Priority Queue implementation. This data-structure allows add and remove elements
- * with priorities. The queue is always ordered by the highest priority.
+            <pre class="prettyprint source linenums"><code> /**
+ * This class is a Queue data structure based on JavaScript Array. This data structure is a
+ * FIFO implmentation, in other words, the first element to enter is the first to exit.
  */
-class PriorityQueue {
-  /**
-   * Creates a PRIORITY-QUEUE data-structure
+class QueueArray {
+   /**
+   * Creates a QUEUE
    * @example
-   * const { PriorityQueue } = require('data-structures-algorithms-js');
-   * const pq = new PriorityQueue();
+   * const { QueueArray } = require('data-structures-algorithms-js');
+   * const queue = new QueueArray();
    */
   constructor() {
-    this._priorityQueue = [];
+    this._queue = [];
   }
+
   /**
-   * Adds a element at the Priority-Queue
+   * Adds a element to the end of the Queue
    * @param {*} element Element passed to insert
-   * @param {Integer} priority Priority can be any integer number 
    * @example
-   * const { PriorityQueue } = require('data-structures-algorithms-js');
-   * const pq = new PriorityQueue();
+   * const { QueueArray } = require('data-structures-algorithms-js');
+   * const queue = new QueueArray();
    *
-   * pq.push(10, 2); //inserts element 10 with priority 2
+   * queue.push(5); //inserts 5 to the end of the queue
    */
-  push(element, priority = 0) {
-    element = [element, priority]
-    if (this.size() === 0) {
-      this._priorityQueue.push(element);
-    } else {
-      let flag = false;
-
-      for (let i = 0; i &lt; this.size(); i++) {
-        if (element[1] > this._priorityQueue[i][1]) {
-          this._priorityQueue.splice(i, 0, element);
-          flag = true;
-          break;
-        }
-      }
-
-      if (!flag) this._priorityQueue.push(element);
-    }
+  push(element) {
+    this._queue.push(element);
   }
+
    /**
-   * removes the first element at the Priority Queue
+   * Removes the first element from the Queue
    * @example
-   * const { PriorityQueue } = require('data-structures-algorithms-js');
-   * const pq = new PriorityQueue();
+   * const { QueueArray } = require('data-structures-algorithms-js');
+   * const queue = new QueueArray();
    *
-   * pq.push(3, 8);
-   * pq.push(9, 10);
+   * queue.push(3);
+   * queue.push(9);
    *
-   * pq.pop(); //removes number 9 from the Priority Queue
+   * queue.pop(); //removes number 9
    */
   pop() {
-    if (this.size() === 0) return undefined;
-    return this._priorityQueue.shift()[0];
+    if (this._queue.length === 0) return undefined;
+
+    this._queue.shift();
   }
+
   /**
-   * Returns the element at the back of Priority Queue
-   * @returns {*} The element at the back
+   * Returns the first element of the Queue
+   * @returns {*|undefined} Returns the element on the front or undefined if queue is empty
    * @example
-   * const { PriorityQueue } = require('data-structures-algorithms-js');
-   * const pq = new PriorityQueue();
+   * const { QueueArray } = require('data-structures-algorithms-js');
+   * const queue = new QueueArray();
    *
-   * pq.push(6); 
-   * pq.push(3, -2);
+   * queue.front();// returns undefined
    *
-   * pq.back(); //returns 3;
-   */
-  back() {
-    if (this.size() === 0) return undefined;
-    return this._priorityQueue[this.size() - 1][0];
-  }
-  /**
-   * Returns the element at the front of the Priority Queue
-   * @returns {*} The element at the front
-   * @example
-   * const { PriorityQueue } = require('data-structures-algorithms-js');
-   * const pq = new PriorityQueue();
+   * queue.push(23);
+   * queue.push(89);
    *
-   * pq.push(6); 
-   * pq.push(3);
-   *
-   * pq.front(); //returns 6;
+   * queue.front(); //returns 23
    */
   front() {
-    if (this.size() === 0) return undefined;
-    return this._priorityQueue[0][0];
+    if (this._queue.length === 0) return undefined;
+    return this._queue[0];
   }
+
   /**
-   * Returns the size of the Priority Queue
-   * @returns {Number} The number of elements in the Priority Queue
+   * Returns the last element of the Queue
+   * @returns {*|undefined} Returns the element on the back or undefined if queue is empty
    * @example
-   * const { PriorityQueue } = require('data-structures-algorithms-js');
-   * const pq = new PriorityQueue();
+   * const { QueueArray } = require('data-structures-algorithms-js');
+   * const queue = new QueueArray();
    *
-   * pq.size(); // returns 0;
+   * queue.back();// returns undefined
    *
-   * pq.push(8, 10);
+   * queue.push(23);
+   * queue.push(89);
    *
-   * pq.size(); //returns 1;
+   * queue.back(); //returns 89
    */
-  size() {
-    return this._priorityQueue.length;
+  back() {
+    if (this._queue.length === 0) return undefined;
+    return this._queue[this._queue.length - 1];
   }
+
   /**
-   * Returns if the Priority Queue is empty
+   * Returns if the Queue is empty
    * @returns {Boolean}
    * @example
-   * const { PriorityQueue } = require('data-structures-algorithms-js');
-   * const pq = new PriorityQueue();
+   * const { QueueArray } = require('data-structures-algorithms-js');
+   * const queue = new QueueArray();
    *
-   * pq.isEmpty(); // returns true;
+   * queue.isEmpty(); // returns true;
    *
-   * pq.push(23, 9);
+   * queue.push(23);
    *
-   * pq.isEmpty(); //returns false;
+   * queue.isEmpty(); //returns false;
    */
   isEmpty() {
-    return this.size() === 0;
+    return this._queue.length === 0;
   }
+
   /**
-   * Resets the the Priority Queue
+   * Returns the size of the Queue
+   * @returns {Number} The number of elements in the Queue
    * @example
-   * const { PriorityQueue } = require('data-structures-algorithms-js');
-   * const pq = new PriorityQueue();
+   * const { QueueArray } = require('data-structures-algorithms-js');
+   * const queue = new QueueArray();
    *
-   * pq.push(15);
+   * queue.size(); // returns 0;
    *
-   * pq.clear(); // now Priority Queue is empty
+   * queue.push(8);
+   *
+   * queue.size(); //returns 1;
+   */
+  size() {
+    return this._queue.length;
+  }
+
+  /**
+   * Resets the Queue
+   * @example
+   * const { QueueArray } = require('data-structures-algorithms-js');
+   * const queue = new QueueArray();
+   *
+   * queue.push(15);
+   *
+   * queue.clear(); // now queue is empty
    */
   clear() {
-    this._priorityQueue = [];
+    this._queue = [];
   }
 }
 
-module.exports = PriorityQueue;
+module.exports = QueueArray;
 </code></pre>
         </article>
     </section>

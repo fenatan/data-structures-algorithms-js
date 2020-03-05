@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 module.exports = {
   /* Algorithms */
   BubbleSort: require('./algorithms/sorting/bubbleSort'),

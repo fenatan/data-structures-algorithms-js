@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: Deque | Class: Deque</title>
+    <title>Class: QueueArray | Class: QueueArray</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -24,7 +24,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Class: Deque</a></h1>
+        <h1><a href="index.html" class="link">Class: QueueArray</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -46,10 +46,10 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Deque<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>QueueArray<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>This class is a Deque implementation. This data-structure allows add and remove elements
-at the front or at the back.</p></div>
+            <div class="class-description"><p>This class is a Queue data structure based on JavaScript Array. This data structure is a
+FIFO implmentation, in other words, the first element to enter is the first to exit.</p></div>
         
     
 </header>
@@ -62,14 +62,14 @@ at the front or at the back.</p></div>
 
 <dt>
     
-        <h4 class="name" id="Deque">
+        <h4 class="name" id="QueueArray">
             
-                new <span class="type-signature"></span>Deque<span class="signature">()</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>QueueArray<span class="signature">()</span><span class="type-signature"></span>
                 
             
             <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line12">line 12</a></code>
+                <code><a href="queue_queueArray.js.html">queue/queueArray.js</a></code>,
+                <code><a href="queue_queueArray.js.html#line12">line 12</a></code>
             </div>
             
         </h4>
@@ -81,7 +81,7 @@ at the front or at the back.</p></div>
 
     
     <div class="description">
-        <p>Creates a DEQUE data-structure</p>
+        <p>Creates a QUEUE</p>
     </div>
     
 
@@ -145,8 +145,8 @@ at the front or at the back.</p></div>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();</code></pre>
+    <pre class="prettyprint"><code>const { QueueArray } = require('data-structures-algorithms-js');
+const queue = new QueueArray();</code></pre>
 
     
 
@@ -178,308 +178,14 @@ const deque = new Deque();</code></pre>
 
 <dt>
     
-        <h4 class="name" id="addBack">
-            
-                <span class="type-signature"></span>addBack<span class="signature">(element)</span><span class="type-signature"></span>
-                
-            
-            <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line51">line 51</a></code>
-            </div>
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Adds a element at the back of the DEQUE</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>element</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Element passed to insert</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();
-
-deque.addBack(87); //inserts 87 at the back of the deque</code></pre>
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="addFront">
-            
-                <span class="type-signature"></span>addFront<span class="signature">(element)</span><span class="type-signature"></span>
-                
-            
-            <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line27">line 27</a></code>
-            </div>
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Adds a element at the front of the DEQUE</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>element</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Element passed to insert</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();
-
-deque.addFront(55); //inserts 55 at the front of the deque</code></pre>
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
         <h4 class="name" id="back">
             
-                <span class="type-signature"></span>back<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span>
+                <span class="type-signature"></span>back<span class="signature">()</span><span class="type-signature"> &rarr; {*|undefined}</span>
                 
             
             <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line121">line 121</a></code>
+                <code><a href="queue_queueArray.js.html">queue/queueArray.js</a></code>,
+                <code><a href="queue_queueArray.js.html#line79">line 79</a></code>
             </div>
             
         </h4>
@@ -491,7 +197,7 @@ deque.addFront(55); //inserts 55 at the front of the deque</code></pre>
 
     
     <div class="description">
-        <p>Returns the element at the back of DEQUE</p>
+        <p>Returns the last element of the Queue</p>
     </div>
     
 
@@ -522,12 +228,15 @@ deque.addFront(55); //inserts 55 at the front of the deque</code></pre>
 
 
 <span class="param-type">*</span>
+|
+
+<span class="param-type">undefined</span>
 
 
 
 
 
-- <p>The element at the back</p>
+- <p>Returns the element on the back or undefined if queue is empty</p>
 
 
 
@@ -576,13 +285,15 @@ deque.addFront(55); //inserts 55 at the front of the deque</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();
+    <pre class="prettyprint"><code>const { QueueArray } = require('data-structures-algorithms-js');
+const queue = new QueueArray();
 
-deque.addFront(6); 
-deque.addBack(3);
+queue.back();// returns undefined
 
-deque.back(); //returns 3;</code></pre>
+queue.push(23);
+queue.push(89);
+
+queue.back(); //returns 89</code></pre>
 
     
 
@@ -599,8 +310,8 @@ deque.back(); //returns 3;</code></pre>
                 
             
             <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line168">line 168</a></code>
+                <code><a href="queue_queueArray.js.html">queue/queueArray.js</a></code>,
+                <code><a href="queue_queueArray.js.html#line128">line 128</a></code>
             </div>
             
         </h4>
@@ -612,7 +323,7 @@ deque.back(); //returns 3;</code></pre>
 
     
     <div class="description">
-        <p>Resets the DEQUE data-structure</p>
+        <p>Resets the Queue</p>
     </div>
     
 
@@ -676,13 +387,12 @@ deque.back(); //returns 3;</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();
+    <pre class="prettyprint"><code>const { QueueArray } = require('data-structures-algorithms-js');
+const queue = new QueueArray();
 
-deque.addFront(15);
-deque.addBack(9);
+queue.push(15);
 
-deque.clear(); // now deque is empty</code></pre>
+queue.clear(); // now queue is empty</code></pre>
 
     
 
@@ -695,12 +405,12 @@ deque.clear(); // now deque is empty</code></pre>
     
         <h4 class="name" id="front">
             
-                <span class="type-signature"></span>front<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span>
+                <span class="type-signature"></span>front<span class="signature">()</span><span class="type-signature"> &rarr; {*|undefined}</span>
                 
             
             <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line105">line 105</a></code>
+                <code><a href="queue_queueArray.js.html">queue/queueArray.js</a></code>,
+                <code><a href="queue_queueArray.js.html#line60">line 60</a></code>
             </div>
             
         </h4>
@@ -712,7 +422,7 @@ deque.clear(); // now deque is empty</code></pre>
 
     
     <div class="description">
-        <p>Returns the element at the front of DEQUE</p>
+        <p>Returns the first element of the Queue</p>
     </div>
     
 
@@ -743,12 +453,15 @@ deque.clear(); // now deque is empty</code></pre>
 
 
 <span class="param-type">*</span>
+|
+
+<span class="param-type">undefined</span>
 
 
 
 
 
-- <p>The element at the front</p>
+- <p>Returns the element on the front or undefined if queue is empty</p>
 
 
 
@@ -797,13 +510,15 @@ deque.clear(); // now deque is empty</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();
+    <pre class="prettyprint"><code>const { QueueArray } = require('data-structures-algorithms-js');
+const queue = new QueueArray();
 
-deque.addFront(6); 
-deque.addBack(3);
+queue.front();// returns undefined
 
-deque.front(); //returns 6;</code></pre>
+queue.push(23);
+queue.push(89);
+
+queue.front(); //returns 23</code></pre>
 
     
 
@@ -820,8 +535,8 @@ deque.front(); //returns 6;</code></pre>
                 
             
             <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line138">line 138</a></code>
+                <code><a href="queue_queueArray.js.html">queue/queueArray.js</a></code>,
+                <code><a href="queue_queueArray.js.html#line97">line 97</a></code>
             </div>
             
         </h4>
@@ -833,7 +548,7 @@ deque.front(); //returns 6;</code></pre>
 
     
     <div class="description">
-        <p>Returns if the DEQUE data-structure is empty</p>
+        <p>Returns if the Queue is empty</p>
     </div>
     
 
@@ -916,14 +631,14 @@ deque.front(); //returns 6;</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();
+    <pre class="prettyprint"><code>const { QueueArray } = require('data-structures-algorithms-js');
+const queue = new QueueArray();
 
-deque.isEmpty(); // returns true;
+queue.isEmpty(); // returns true;
 
-deque.addBack(23);
+queue.push(23);
 
-deque.isEmpty(); //returns false;</code></pre>
+queue.isEmpty(); //returns false;</code></pre>
 
     
 
@@ -934,14 +649,14 @@ deque.isEmpty(); //returns false;</code></pre>
 
 <dt>
     
-        <h4 class="name" id="removeBack">
+        <h4 class="name" id="pop">
             
-                <span class="type-signature"></span>removeBack<span class="signature">()</span><span class="type-signature"></span>
+                <span class="type-signature"></span>pop<span class="signature">()</span><span class="type-signature"></span>
                 
             
             <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line85">line 85</a></code>
+                <code><a href="queue_queueArray.js.html">queue/queueArray.js</a></code>,
+                <code><a href="queue_queueArray.js.html#line40">line 40</a></code>
             </div>
             
         </h4>
@@ -953,7 +668,7 @@ deque.isEmpty(); //returns false;</code></pre>
 
     
     <div class="description">
-        <p>Removes an element from the end of the DEQUE</p>
+        <p>Removes the first element from the Queue</p>
     </div>
     
 
@@ -1017,13 +732,13 @@ deque.isEmpty(); //returns false;</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();
+    <pre class="prettyprint"><code>const { QueueArray } = require('data-structures-algorithms-js');
+const queue = new QueueArray();
 
-deque.addFront(59); 
-deque.addFront(14);
+queue.push(3);
+queue.push(9);
 
-deque.removeBack(); //removes 59 from the deque</code></pre>
+queue.pop(); //removes number 9</code></pre>
 
     
 
@@ -1034,14 +749,14 @@ deque.removeBack(); //removes 59 from the deque</code></pre>
 
 <dt>
     
-        <h4 class="name" id="removeFront">
+        <h4 class="name" id="push">
             
-                <span class="type-signature"></span>removeFront<span class="signature">()</span><span class="type-signature"></span>
+                <span class="type-signature"></span>push<span class="signature">(element)</span><span class="type-signature"></span>
                 
             
             <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line66">line 66</a></code>
+                <code><a href="queue_queueArray.js.html">queue/queueArray.js</a></code>,
+                <code><a href="queue_queueArray.js.html#line25">line 25</a></code>
             </div>
             
         </h4>
@@ -1053,7 +768,7 @@ deque.removeBack(); //removes 59 from the deque</code></pre>
 
     
     <div class="description">
-        <p>Removes an element from the beginning of the DEQUE</p>
+        <p>Adds a element to the end of the Queue</p>
     </div>
     
 
@@ -1063,6 +778,56 @@ deque.removeBack(); //removes 59 from the deque</code></pre>
 
     
 
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Element passed to insert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
     
 
     
@@ -1117,13 +882,10 @@ deque.removeBack(); //removes 59 from the deque</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();
+    <pre class="prettyprint"><code>const { QueueArray } = require('data-structures-algorithms-js');
+const queue = new QueueArray();
 
-deque.addFront(59); 
-deque.addFront(14);
-
-deque.removeFront(); //removes 14 from the deque</code></pre>
+queue.push(5); //inserts 5 to the end of the queue</code></pre>
 
     
 
@@ -1140,8 +902,8 @@ deque.removeFront(); //removes 14 from the deque</code></pre>
                 
             
             <div class="container-source members">
-                <code><a href="queue_deque.js.html">queue/deque.js</a></code>,
-                <code><a href="queue_deque.js.html#line154">line 154</a></code>
+                <code><a href="queue_queueArray.js.html">queue/queueArray.js</a></code>,
+                <code><a href="queue_queueArray.js.html#line114">line 114</a></code>
             </div>
             
         </h4>
@@ -1153,7 +915,7 @@ deque.removeFront(); //removes 14 from the deque</code></pre>
 
     
     <div class="description">
-        <p>Returns the size of the DEQUE data-structure</p>
+        <p>Returns the size of the Queue</p>
     </div>
     
 
@@ -1189,7 +951,7 @@ deque.removeFront(); //removes 14 from the deque</code></pre>
 
 
 
-- <p>The number of elements in the DEQUE</p>
+- <p>The number of elements in the Queue</p>
 
 
 
@@ -1238,14 +1000,14 @@ deque.removeFront(); //removes 14 from the deque</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Deque } = require('data-structures-algorithms-js');
-const deque = new Deque();
+    <pre class="prettyprint"><code>const { QueueArray } = require('data-structures-algorithms-js');
+const queue = new QueueArray();
 
-deque.size(); // returns 0;
+queue.size(); // returns 0;
 
-deque.addFront(8);
+queue.push(8);
 
-deque.size(); //returns 1;</code></pre>
+queue.size(); //returns 1;</code></pre>
 
     
 
@@ -1276,7 +1038,7 @@ deque.size(); //returns 1;</code></pre>
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'Deque_sub'.replace(/"/g, '_');
+        var id = 'QueueArray_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
