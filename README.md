@@ -4,6 +4,9 @@
 # Data Structures and Algorithms
 >Implementation of some Data Structures and Algorithms in JavaScript
 
+## Algorithms
+  - BubbleSort
+  
 ## Data Structures
 - Deque
 - Priority Queue
@@ -13,9 +16,6 @@
 - Stack
 - Stack(Array-based)
 
-## Algorithms
-  - Not implemented yed :(
- 
 ## Installation
 
 This is Node.js module available through npm.

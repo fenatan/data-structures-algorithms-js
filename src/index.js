@@ -1,5 +1,7 @@
 /* eslint-disable global-require */
 module.exports = {
+  /* Algorithms */
+  BubbleSort: require('./algorithms/sorting/bubbleSort'),
   /* Data Structures */
   Set: require('./data-structures/set/set'),
   Stack: require('./data-structures/stack/stackObject'),
