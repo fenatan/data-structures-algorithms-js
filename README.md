@@ -9,6 +9,8 @@
   
 ## Data Structures
 - Deque
+- HashTable
+- LinkedList
 - Priority Queue
 - Queue
 - Queue(Array-based)
