@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: Set | Class: Set</title>
+    <title>Class: LinkedList | Class: LinkedList</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -24,7 +24,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Class: Set</a></h1>
+        <h1><a href="index.html" class="link">Class: LinkedList</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -46,9 +46,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Set<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>LinkedList<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>This class contains all methods to simulate a SET data-structure</p></div>
+            <div class="class-description"><p>This class is a Linked List implementation</p></div>
         
     
 </header>
@@ -61,14 +61,14 @@
 
 <dt>
     
-        <h4 class="name" id="Set">
+        <h4 class="name" id="LinkedList">
             
-                new <span class="type-signature"></span>Set<span class="signature">()</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>LinkedList<span class="signature">()</span><span class="type-signature"></span>
                 
             
             <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line11">line 11</a></code>
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line12">line 12</a></code>
             </div>
             
         </h4>
@@ -80,7 +80,7 @@
 
     
     <div class="description">
-        <p>Creates a SET data-structure</p>
+        <p>Creates a Linked List data-structure</p>
     </div>
     
 
@@ -144,8 +144,8 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();</code></pre>
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();</code></pre>
 
     
 
@@ -183,8 +183,8 @@ const set = new Set();</code></pre>
                 
             
             <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line137">line 137</a></code>
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line223">line 223</a></code>
             </div>
             
         </h4>
@@ -196,7 +196,7 @@ const set = new Set();</code></pre>
 
     
     <div class="description">
-        <p>Resets the SET data-structure</p>
+        <p>Resets the Linked List</p>
     </div>
     
 
@@ -260,12 +260,12 @@ const set = new Set();</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
 
-set.insert(15);
+linkedList.push(15);
 
-set.clear();</code></pre>
+linkedList.clear(); // now linked list is empty</code></pre>
 
     
 
@@ -276,14 +276,14 @@ set.clear();</code></pre>
 
 <dt>
     
-        <h4 class="name" id="erase">
+        <h4 class="name" id="getElementAt">
             
-                <span class="type-signature"></span>erase<span class="signature">(element)</span><span class="type-signature"> &rarr; {Boolean}</span>
+                <span class="type-signature"></span>getElementAt<span class="signature">(index)</span><span class="type-signature"> &rarr; {*|undefined}</span>
                 
             
             <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line50">line 50</a></code>
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line99">line 99</a></code>
             </div>
             
         </h4>
@@ -295,7 +295,914 @@ set.clear();</code></pre>
 
     
     <div class="description">
-        <p>Removes a element from the SET data-structure</p>
+        <p>Returns a element from a specific index if it exists</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Index passed to return element</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">*</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+
+
+
+- <p>Returns the element or undefined</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
+
+linkedList.push(3);
+linkedList.push(9);
+
+linkedList.getElementAt(1); //returns number 9</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="head">
+            
+                <span class="type-signature"></span>head<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line194">line 194</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the nodo on the head of the linked list</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Object</span>
+
+
+
+
+
+- <p>returns the head object with the element and next node</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
+
+
+linkedList.push(23);
+
+linkedList.head(); //returns {element:23, next:null};</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="indexOf">
+            
+                <span class="type-signature"></span>indexOf<span class="signature">(element)</span><span class="type-signature"> &rarr; {Number}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line156">line 156</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the index of a specific element if it exists</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Element passed to find the index</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Number</span>
+
+
+
+
+
+- <p>Returns the index or -1</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
+
+linkedList.push(3);
+linkedList.push(9);
+
+linkedList.indexOf(5); //returns -1
+linkedList.indexOf(3); //returns 0</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="insert">
+            
+                <span class="type-signature"></span>insert<span class="signature">(element, index)</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line124">line 124</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Inserts a element to the specific position of the linked list</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Element passed to insert</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Index to insert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
+
+linkedList.push(5);
+linkedList.push(7);
+
+linkedList.insert(15, 1); // inserts 15 at index 1</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="isEmpty">
+            
+                <span class="type-signature"></span>isEmpty<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line210">line 210</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns if the linked list is empty</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Boolean</span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
+
+linkedList.isEmpty(); // returns true;
+
+linkedList.push(23);
+
+linkedList.isEmpty(); //returns false;</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="push">
+            
+                <span class="type-signature"></span>push<span class="signature">(element)</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line26">line 26</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds a element to the end of the linked list</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Element passed to insert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
+
+linkedList.push(5); //inserts 5 to the end of the linked list</code></pre>
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="remove">
+            
+                <span class="type-signature"></span>remove<span class="signature">(element)</span><span class="type-signature"> &rarr; {*|undefined}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line52">line 52</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes a element if it exists</p>
     </div>
     
 
@@ -375,183 +1282,16 @@ set.clear();</code></pre>
 
 
 
-<span class="param-type">Boolean</span>
-
-
-
-
-
-- <p>If element was removed from the SET</p>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
-
-set.insert(25);
-set.insert(3);
-
-set.erase(3); //returns true
-set.erase(42); //returns false;</code></pre>
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="find">
-            
-                <span class="type-signature"></span>find<span class="signature">(Element)</span><span class="type-signature"> &rarr; {Boolean}</span>
-                
-            
-            <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line89">line 89</a></code>
-            </div>
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Finds a specific element in the SET data-structure</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>Element</code></td>
-            
-
-            <td class="type">
-            
-                
 <span class="param-type">*</span>
+|
 
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Element to find</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Boolean</span>
+<span class="param-type">undefined</span>
 
 
 
 
+
+- <p>Returns the removed element or undefined</p>
 
 
 
@@ -600,10 +1340,13 @@ set.erase(42); //returns false;</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
 
-set.find(5); //returns false</code></pre>
+linkedList.push(3);
+linkedList.push(9);
+
+linkedList.remove(3); //removes and returns number 3</code></pre>
 
     
 
@@ -614,14 +1357,14 @@ set.find(5); //returns false</code></pre>
 
 <dt>
     
-        <h4 class="name" id="insert">
+        <h4 class="name" id="removeAt">
             
-                <span class="type-signature"></span>insert<span class="signature">(element)</span><span class="type-signature"> &rarr; {Boolean}</span>
+                <span class="type-signature"></span>removeAt<span class="signature">(element)</span><span class="type-signature"> &rarr; {*|undefined}</span>
                 
             
             <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line29">line 29</a></code>
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line70">line 70</a></code>
             </div>
             
         </h4>
@@ -633,7 +1376,7 @@ set.find(5); //returns false</code></pre>
 
     
     <div class="description">
-        <p>Adds an element to the SET data structure</p>
+        <p>Removes a element from a specific index if it exists</p>
     </div>
     
 
@@ -685,7 +1428,7 @@ set.find(5); //returns false</code></pre>
 
             
 
-            <td class="description last"><p>Element passed to insert</p></td>
+            <td class="description last"><p>Element passed to remove</p></td>
         </tr>
 
     
@@ -713,131 +1456,16 @@ set.find(5); //returns false</code></pre>
 
 
 
-<span class="param-type">Boolean</span>
+<span class="param-type">*</span>
+|
+
+<span class="param-type">undefined</span>
 
 
 
 
 
-- <p>If element was added into the SET</p>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new set();
-
-set.insert(2); //returns true
-set.insert(38); //returns true
-set.insert(2); //returns false</code></pre>
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="isEmpty">
-            
-                <span class="type-signature"></span>isEmpty<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span>
-                
-            
-            <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line123">line 123</a></code>
-            </div>
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Returns if the SET data-structure is empty</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Boolean</span>
-
-
-
-
+- <p>Returns the removed element or undefined</p>
 
 
 
@@ -886,14 +1514,13 @@ set.insert(2); //returns false</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
 
-set.isEmpty(); // returns true;
+linkedList.push(3);
+linkedList.push(9);
 
-set.insert(15);
-
-set.isEmpty(); //returns false;</code></pre>
+linkedList.removeAt(1); //removes and returns number 9</code></pre>
 
     
 
@@ -910,8 +1537,8 @@ set.isEmpty(); //returns false;</code></pre>
                 
             
             <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line106">line 106</a></code>
+                <code><a href="linkedList_linkedList.js.html">linkedList/linkedList.js</a></code>,
+                <code><a href="linkedList_linkedList.js.html#line179">line 179</a></code>
             </div>
             
         </h4>
@@ -923,7 +1550,7 @@ set.isEmpty(); //returns false;</code></pre>
 
     
     <div class="description">
-        <p>Returns the size of the SET data-structure</p>
+        <p>Returns the size of the Linked List</p>
     </div>
     
 
@@ -959,7 +1586,7 @@ set.isEmpty(); //returns false;</code></pre>
 
 
 
-- <p>The number of elements in SET</p>
+- <p>The number of elements in the Linked List</p>
 
 
 
@@ -1008,136 +1635,14 @@ set.isEmpty(); //returns false;</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new Set();
+    <pre class="prettyprint"><code>const { LinkedList } = require('data-structures-algorithms-js');
+const linkedList = new LinkedList();
 
-set.size(); // returns 0;
+linkedList.size(); // returns 0;
 
-set.insert(8);
+linkedList.push(8);
 
-set.size(); //returns 1;</code></pre>
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="values">
-            
-                <span class="type-signature"></span>values<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span>
-                
-            
-            <div class="container-source members">
-                <code><a href="set_set.js.html">set/set.js</a></code>,
-                <code><a href="set_set.js.html#line71">line 71</a></code>
-            </div>
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Returns all elements in the SET data-structure</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Array</span>
-
-
-
-
-
-- <p>Returns an ordered Array</p>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>const { Set } = require('data-structures-algorithms-js');
-const set = new set();
-
-set.insert(55);
-set.insert(36);
-set.insert(78);
-
-set.values(); //returns [36, 55, 78]</code></pre>
+linkedList.size(); //returns 1;</code></pre>
 
     
 
@@ -1168,7 +1673,7 @@ set.values(); //returns [36, 55, 78]</code></pre>
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'Set_sub'.replace(/"/g, '_');
+        var id = 'LinkedList_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: queue/deque.js | Source: queue/deque.js</title>
+    <title>Source: linkedList/linkedList.js | Source: linkedList/linkedList.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -26,7 +26,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Source: queue/deque.js</a></h1>
+        <h1><a href="index.html" class="link">Source: linkedList/linkedList.js</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -46,181 +46,235 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * This class is a Deque implementation. This data-structure allows add and remove elements
- * at the front or at the back.
+            <pre class="prettyprint source linenums"><code>const Node = require("./node");
+/**
+ * This class is a Linked List implementation
  */
-class Deque {
-  /**
-   * Creates a DEQUE data-structure
-   * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
-   */
-  constructor() {
-    this._backIndex = 0;
-    this._frontIndex = 0;
-    this._deque = {};
-  }
-
+class LinkedList {
    /**
-   * Adds a element at the front of the DEQUE
-   * @param {*} element Element passed to insert
+   * Creates a Linked List data-structure
    * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
-   *
-   * deque.addFront(55); //inserts 55 at the front of the deque
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
    */
-  addFront(element) {
-    if (this.isEmpty()) {
-      this.addBack(element);
-    } else if (this._frontIndex > 0) {
-      this._frontIndex--;
-      this._deque[this._frontIndex] = element;
-    } else {
-      for (let i = this._backIndex; i > 0; i--)
-        this._deque[i] = this._deque[i - 1];
-      this._backIndex++;
-      this._frontIndex = 0;
-      this._deque[0] = element;
+    constructor() {
+        this._count = 0;
+        this._head = null;
     }
-  }
 
-  /**
-   * Adds a element at the back of the DEQUE
+   /**
+   * Adds a element to the end of the linked list
    * @param {*} element Element passed to insert
    * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
    *
-   * deque.addBack(87); //inserts 87 at the back of the deque
+   * linkedList.push(5); //inserts 5 to the end of the linked list
    */
-  addBack(element) {
-    this._deque[this._backIndex] = element;
-    this._backIndex++;
-  }
-   /**
-   * Removes an element from the beginning of the DEQUE
-   * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
-   *
-   * deque.addFront(59); 
-   * deque.addFront(14);
-   * 
-   * deque.removeFront(); //removes 14 from the deque
-   */
-  removeFront() {
-    if (this.size() === 0) return undefined;
+    push(element) {
+        const node = new Node(element);
+        if (this._head === null) this._head = node;
+        else {
+            let currentNode = this.head();
+            while (currentNode.next) {
+                currentNode = currentNode.next;
+            }
+            currentNode.next = node;
+        }
+        this._count++;
+    }
 
-    const removed = this._deque[this._frontIndex];
-    delete this._deque[this._frontIndex];
-    this._frontIndex++;
-    return removed;
-  }
-  /**
-   * Removes an element from the end of the DEQUE
-   * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
-   *
-   * deque.addFront(59); 
-   * deque.addFront(14);
-   * 
-   * deque.removeBack(); //removes 59 from the deque
-   */
-  removeBack() {
-    if (this.size() === 0) return undefined;
-
-    const removed = this._deque[this._backIndex - 1];
-    delete this._deque[this._backIndex - 1];
-    this._backIndex--;
-    return removed;
-  }
-  /**
-   * Returns the element at the front of DEQUE
-   * @returns {*} The element at the front
-   * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
-   *
-   * deque.addFront(6); 
-   * deque.addBack(3);
-   *
-   * deque.front(); //returns 6;
-   */
-  front() {
-    if (this.size() === 0) return undefined;
-    return this._deque[this._frontIndex];
-  }
-  /**
-   * Returns the element at the back of DEQUE
-   * @returns {*} The element at the back
-   * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
-   *
-   * deque.addFront(6); 
-   * deque.addBack(3);
-   *
-   * deque.back(); //returns 3;
-   */
-  back() {
-    if (this.size() === 0) return undefined;
-    return this._deque[this._backIndex - 1];
-  }
-  /**
-   * Returns if the DEQUE data-structure is empty
-   * @returns {Boolean} 
-   * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
-   *
-   * deque.isEmpty(); // returns true;
-   *
-   * deque.addBack(23);
-   *
-   * deque.isEmpty(); //returns false;
-   */
-  isEmpty() {
-    return this.size() === 0;
-  }
    /**
-   * Returns the size of the DEQUE data-structure
-   * @returns {Number} The number of elements in the DEQUE
+   * Removes a element if it exists
+   * @param {*} element Element passed to remove
+   * @returns {*|undefined} Returns the removed element or undefined
    * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
    *
-   * deque.size(); // returns 0;
+   * linkedList.push(3);
+   * linkedList.push(9);
    *
-   * deque.addFront(8);
-   *
-   * deque.size(); //returns 1;
+   * linkedList.remove(3); //removes and returns number 3
    */
-  size() {
-    return this._backIndex - this._frontIndex;
-  }
-  /**
-   * Resets the DEQUE data-structure
+    remove(element) {
+        const index = this.indexOf(element);
+        return this.removeAt(index);
+    }
+
+   /**
+   * Removes a element from a specific index if it exists
+   * @param {*} element Element passed to remove
+   * @returns {*|undefined} Returns the removed element or undefined
    * @example
-   * const { Deque } = require('data-structures-algorithms-js');
-   * const deque = new Deque();
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
    *
-   * deque.addFront(15);
-   * deque.addBack(9);
+   * linkedList.push(3);
+   * linkedList.push(9);
+   *
+   * linkedList.removeAt(1); //removes and returns number 9
+   */
+    removeAt(index) {
+        if (index >= 0 &amp;&amp; index &lt; this._count) {
+            let currentNode = this.head();
+            if (index === 0) {
+                this._head = currentNode.next;
+            } else {
+                let previousNode = this.getElementAt(index - 1, 1);
+                currentNode = previousNode.next;
+                previousNode.next = currentNode.next;
+            }
+            this._count--;
+            return currentNode.element;
+        }
+        return undefined;
+    }
+
+   /**
+   * Returns a element from a specific index if it exists
+   * @param {*} index Index passed to return element
+   * @returns {*|undefined} Returns the element or undefined
+   * @example
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
+   *
+   * linkedList.push(3);
+   * linkedList.push(9);
+   *
+   * linkedList.getElementAt(1); //returns number 9
+   */
+    getElementAt(index, flag = 0) {
+        if (index >= 0 &amp;&amp; index &lt; this._count) {
+            let currentNode = this._head;
+            for (let i = 0; i &lt; index; i++)
+                currentNode = currentNode.next;
+            if (flag === 0)
+                return currentNode.element;
+            return currentNode;
+        }
+        return undefined;
+    }
+
+   /**
+   * Inserts a element to the specific position of the linked list
+   * @param {*} element Element passed to insert
+   * @param {Number} index Index to insert
+   * @example
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
+   *
+   * linkedList.push(5);
+   * linkedList.push(7);
    * 
-   * deque.clear(); // now deque is empty
+   * linkedList.insert(15, 1); // inserts 15 at index 1
    */
-  clear() {
-    this._backIndex = 0;
-    this._frontIndex = 0;
-    this._deque = {};
-  }
+    insert(element, index) {
+        if (index >= 0 &amp;&amp; index &lt;= this._count) {
+            const node = new Node(element);
+            if (index === 0) {
+                const currentNode = this._head;
+                node.next = currentNode;
+                this._head = node;
+            } else {
+                let currentNode = this.getElementAt(index - 1, 1);
+                node.next = currentNode.next;
+                currentNode.next = node;
+            }
+            this._count++;
+            return true;
+        }
+        return false;
+    }
+
+   /**
+   * Returns the index of a specific element if it exists
+   * @param {*} element Element passed to find the index
+   * @returns {Number} Returns the index or -1
+   * @example
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
+   *
+   * linkedList.push(3);
+   * linkedList.push(9);
+   *
+   * linkedList.indexOf(5); //returns -1
+   * linkedList.indexOf(3); //returns 0
+   */
+    indexOf(element) {
+        let currentNode = this._head;
+        for (let i = 0; i &lt; this._count; i++) {
+            if (currentNode.element === element)
+                return i;
+            currentNode = currentNode.next;
+        }
+        return -1;
+    }
+
+    /**
+   * Returns the size of the Linked List
+   * @returns {Number} The number of elements in the Linked List
+   * @example
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
+   *
+   * linkedList.size(); // returns 0;
+   *
+   * linkedList.push(8);
+   *
+   * linkedList.size(); //returns 1;
+   */
+    size() {
+        return this._count;
+    }
+   /**
+   * Returns the nodo on the head of the linked list
+   * @returns {Object} returns the head object with the element and next node 
+   * @example
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
+   *
+   *
+   * linkedList.push(23);
+   *
+   * linkedList.head(); //returns {element:23, next:null};
+   */
+    head() {
+        return this._head;
+    }
+   /**
+   * Returns if the linked list is empty
+   * @returns {Boolean}
+   * @example
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
+   *
+   * linkedList.isEmpty(); // returns true;
+   *
+   * linkedList.push(23);
+   *
+   * linkedList.isEmpty(); //returns false;
+   */
+    isEmpty() {
+        return this.size() === 0;
+    }
+    /**
+   * Resets the Linked List
+   * @example
+   * const { LinkedList } = require('data-structures-algorithms-js');
+   * const linkedList = new LinkedList();
+   *
+   * linkedList.push(15);
+   *
+   * linkedList.clear(); // now linked list is empty
+   */
+    clear(){
+        this._count = 0;
+        this._head = null;
+    }
 }
 
-module.exports = Deque;
+module.exports = LinkedList;
 </code></pre>
         </article>
     </section>
