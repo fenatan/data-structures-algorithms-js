@@ -6,17 +6,19 @@
 
 ## Algorithms
   - BubbleSort
+  - MergeSort
+  - QuickSortSort
   
 ## Data Structures
-- Deque
-- HashTable
-- LinkedList
-- Priority Queue
-- Queue
-- Queue(Array-based)
-- Set
-- Stack
-- Stack(Array-based)
+  - Deque
+  - HashTable
+  - LinkedList
+  - Priority Queue
+  - Queue
+  - Queue(Array-based)
+  - Set
+  - Stack
+  - Stack(Array-based)
 
 ## Installation
 
