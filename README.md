@@ -5,14 +5,14 @@
 >Implementation of some Data Structures and Algorithms in JavaScript
 
 ## Algorithms
-  - BubbleSort
-  - MergeSort
-  - QuickSortSort
+  - Bubble Sort
+  - Merge Sort
+  - Quick Sort
   
 ## Data Structures
   - Deque
-  - HashTable
-  - LinkedList
+  - Hash Table
+  - Linked List
   - Priority Queue
   - Queue
   - Queue(Array-based)
