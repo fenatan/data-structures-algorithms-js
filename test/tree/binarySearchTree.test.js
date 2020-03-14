@@ -78,4 +78,118 @@ describe('BST tests', function () {
 
         assert.deepEqual(bst.getMax(), 20);
     });
+
+    context('when search an element in BST', () => {
+        it('should return true if element exists', () => {
+            const bst = new BST();
+
+            bst.insert(10);
+            bst.insert(5);
+            bst.insert(15);
+            bst.insert(4);
+            bst.insert(2);
+            bst.insert(20);
+            bst.insert(12);
+            bst.insert(8);
+
+            assert.deepEqual(bst.find(4), true);
+            assert.deepEqual(bst.find(20), true);
+            assert.deepEqual(bst.find(8), true);
+        })
+
+        it('should return false if element does not exists', () => {
+            const bst = new BST();
+
+            bst.insert(10);
+            bst.insert(5);
+            bst.insert(15);
+            bst.insert(4);
+            bst.insert(2);
+            bst.insert(20);
+            bst.insert(12);
+            bst.insert(8);
+
+            assert.deepEqual(bst.find(99), false);
+            assert.deepEqual(bst.find(11), false);
+            assert.deepEqual(bst.find(0), false);
+        })
+    });
+
+    context('when transverse the BST', () => {
+        it('should transverse In Order', () => {
+            const bst = new BST();
+
+            assert.deepEqual(bst.inOrder(), []);
+
+            bst.insert(9);
+            assert.deepEqual(bst.inOrder(), [9]);
+            bst.insert(4);
+            bst.insert(17);
+            bst.insert(3);
+            bst.insert(6);
+            bst.insert(22);
+            bst.insert(5);
+            bst.insert(7);
+            bst.insert(20);
+
+            assert.deepEqual(bst.inOrder(), [3, 4, 5, 6, 7, 9, 17, 20, 22]);
+        });
+
+        it('should transverse Post Order', () => {
+            const bst = new BST();
+
+            assert.deepEqual(bst.postOrder(), []);
+
+            bst.insert(9);
+            assert.deepEqual(bst.postOrder(), [9]);
+            bst.insert(4);
+            bst.insert(17);
+            bst.insert(3);
+            bst.insert(6);
+            bst.insert(22);
+            bst.insert(5);
+            bst.insert(7);
+            bst.insert(20);
+
+            assert.deepEqual(bst.postOrder(), [3, 5, 7, 6, 4, 20, 22, 17, 9]);
+        });
+
+        it('should transverse Pre Order', () => {
+            const bst = new BST();
+
+            assert.deepEqual(bst.preOrder(), []);
+
+            bst.insert(9);
+            assert.deepEqual(bst.preOrder(), [9]);
+            bst.insert(4);
+            bst.insert(17);
+            bst.insert(3);
+            bst.insert(6);
+            bst.insert(22);
+            bst.insert(5);
+            bst.insert(7);
+            bst.insert(20);
+
+            assert.deepEqual(bst.preOrder(), [9, 4, 3, 6, 5, 7, 17, 22, 20]);
+        });
+
+        it('should transverse Level Order', () => {
+            const bst = new BST();
+
+            assert.deepEqual(bst.levelOrder(), []);
+
+            bst.insert(9);
+            assert.deepEqual(bst.levelOrder(), [9]);
+            bst.insert(4);
+            bst.insert(17);
+            bst.insert(3);
+            bst.insert(6);
+            bst.insert(22);
+            bst.insert(5);
+            bst.insert(7);
+            bst.insert(20);
+
+            assert.deepEqual(bst.levelOrder(), [9, 4, 17, 3, 6, 22, 5, 7, 20]);
+        });
+    });
 });
