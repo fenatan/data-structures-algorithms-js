@@ -1,7 +1,7 @@
 const assert = require('assert');
 const BST = require('../../src/data-structures/Tree/binarySearchTree');
 
-describe.only('BST tests', function () {
+describe('BST tests', function () {
     it('Should create a BST', () => {
         const bst = new BST();
         assert.notEqual(bst, null);
