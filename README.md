@@ -10,6 +10,7 @@
   - Quick Sort
   
 ## Data Structures
+  - Binary Search Tree
   - Deque
   - Hash Table
   - Linked List
