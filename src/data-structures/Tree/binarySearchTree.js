@@ -80,13 +80,13 @@ class BinarySearchTree {
 
         queue.push(node);
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             result.push(node.element);
 
-            if(node.left !== null)
+            if (node.left !== null)
                 queue.push(node.left);
 
-            if(node.right !== null)
+            if (node.right !== null)
                 queue.push(node.right);
 
             queue.pop();
@@ -96,6 +96,40 @@ class BinarySearchTree {
         return result;
     }
 
+    _removeNode(node, element) {
+        if (node === null)
+            return null;
+
+        if (node.element === element) {
+
+            //has no children
+            if (node.left === null && node.right === null)
+                return null;
+
+            //has no child on the left
+            if (node.left === null)
+                return node.right;
+
+            //has no child on the right
+            if (node.right === null)
+                return node.left;
+
+            //has two children
+            let tempNode = node.right;
+            while (tempNode.left !== null)
+                tempNode = tempNode.left;
+
+            node.element = tempNode.element;
+            node.right = this._removeNode(node.right, tempNode.element);
+            return node;
+        } else if (node.element > element) {
+            node.left = this._removeNode(node.left, element);
+            return node;
+        } else {
+            node.right = this._removeNode(node.right, element);
+            return node;
+        }
+    }
 
     insert(element) {
         if (this._getRoot() === null) {
@@ -147,6 +181,10 @@ class BinarySearchTree {
 
     levelOrder() {
         return this._transverseLevelOrder(this._getRoot());
+    }
+
+    remove(element) {
+        return this._removeNode(this._getRoot(), element);
     }
 }
 

@@ -192,4 +192,91 @@ describe('BST tests', function () {
             assert.deepEqual(bst.levelOrder(), [9, 4, 17, 3, 6, 22, 5, 7, 20]);
         });
     });
+
+    context('when remove a node', () => {
+        it('should remove a node that has no children', () => {
+            const bst = new BST();
+
+            assert.deepEqual(bst.remove(654), null);
+
+            bst.insert(50);
+            bst.insert(72);
+            bst.insert(17);
+            bst.insert(76);
+            bst.insert(54);
+            bst.insert(23);
+            bst.insert(12);
+            bst.insert(67);
+            bst.insert(19);
+            bst.insert(14);
+            bst.insert(9);
+
+            bst.remove(76);
+            assert.deepEqual(bst.inOrder(), [9, 12, 14, 17, 19, 23, 50, 54, 67, 72]);
+        });
+
+        it('should remove a node that has no child on the left', () => {
+            const bst = new BST();
+
+            assert.deepEqual(bst.remove(654), null);
+
+            bst.insert(50);
+            bst.insert(72);
+            bst.insert(17);
+            bst.insert(76);
+            bst.insert(54);
+            bst.insert(23);
+            bst.insert(12);
+            bst.insert(67);
+            bst.insert(19);
+            bst.insert(14);
+            bst.insert(9);
+
+            bst.remove(54);
+            assert.deepEqual(bst.inOrder(), [9, 12, 14, 17, 19, 23, 50, 67, 72, 76]);
+        });
+
+        it('should remove a node that has no child on the right', () => {
+            const bst = new BST();
+
+            assert.deepEqual(bst.remove(654), null);
+
+            bst.insert(50);
+            bst.insert(72);
+            bst.insert(17);
+            bst.insert(76);
+            bst.insert(54);
+            bst.insert(23);
+            bst.insert(12);
+            bst.insert(67);
+            bst.insert(19);
+            bst.insert(14);
+            bst.insert(9);
+
+            bst.remove(23);
+            assert.deepEqual(bst.inOrder(), [9, 12, 14, 17, 19, 50, 54, 67, 72, 76]);
+        });
+
+        it('should remove a node that has two children', () => {
+            const bst = new BST();
+
+            assert.deepEqual(bst.remove(654), null);
+
+            bst.insert(50);
+            bst.insert(72);
+            bst.insert(17);
+            bst.insert(76);
+            bst.insert(54);
+            bst.insert(23);
+            bst.insert(12);
+            bst.insert(67);
+            bst.insert(19);
+            bst.insert(14);
+            bst.insert(9);
+            
+            bst.remove(17);
+            
+            assert.deepEqual(bst.inOrder(), [9, 12, 14, 19, 23, 50, 54, 67, 72, 76]);
+        });
+    })
 });
